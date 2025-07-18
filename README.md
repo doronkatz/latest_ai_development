@@ -1,29 +1,82 @@
-# LatestAiDevelopment Crew
+# CrewAI Research Project
 
-A CrewAI-powered research and reporting system with integrated web search capabilities.
+The CrewAI project is designed to leverage advanced web search capabilities for real-time research, data gathering, and comprehensive reporting. It integrates the SerperDevTool to perform web searches and gather up-to-date information from the internet. The project is configured to ensure that sensitive information like API keys is managed securely.
 
-## Features
+## Project Purpose
 
-- **Web Search Integration**: Leverages SerperDevTool to search the web for up-to-date information
-- **Real-time Research**: Access current trends, breaking news, and the latest developments
-- **Comprehensive Reporting**: Transforms web-sourced data into detailed, well-structured reports
+The CrewAI project aims to enhance research and reporting capabilities using automated agents equipped with state-of-the-art web search tools. The project provides:
 
-## Agents
+- **Web Search Integration**: Uses the SerperDevTool for accessing real-time web data 
+- **Real-time Research**: Collects and analyzes the latest developments and trends 
+- **Comprehensive Reporting**: Transforms data into detailed, structured reports
 
-1. **Senior Data Researcher with Web Search Expertise**
-   - Searches the web for cutting-edge developments
-   - Finds real-time information, recent news, and emerging trends
-   - Presents relevant, up-to-date information from across the internet
+## Setup Instructions
 
-2. **Reporting Analyst**
-   - Synthesizes web-sourced research findings
-   - Creates comprehensive reports from online sources
-   - Transforms complex data into clear, actionable insights
+### Prerequisites
 
-## Web Search Capability
+- Python 3.10.x to 3.13.x
+- A virtual environment is recommended for installing dependencies
 
-The crew is equipped with powerful web search functionality through the SerperDev API, enabling:
-- Access to current, real-time information
-- Discovery of recent developments and trends
-- Comprehensive online research across multiple sources
-- Fact-checking with up-to-date data
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+
+2. Create a virtual environment:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. Install the dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Configuration
+
+1. **API Keys**: 
+
+   Add your SerperDev API key to the `.env` file in the project root:
+   ```
+   SERPER_API_KEY=<YOUR_SERPER_API_KEY>
+   OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
+   ```
+
+2. **Environment Variables**:
+
+   Ensure that your `.env` file contains all necessary API keys. These are accessed within the code using `os.getenv`.
+
+### Usage
+
+To run the CrewAI application, use the following command:
+```bash
+crewai run
+```
+
+This will activate the research task that leverages web search capabilities to provide comprehensive and up-to-date insights on the specified topics.
+
+## SerperDevTool Integration
+
+The SerperDevTool is an integral part of the CrewAI project, adding powerful web search functionality. This tool is initialized in the `research_task` function within `crew.py`, which requires the previously configured API key.
+
+### Usage in Research Tasks
+
+- Searches the web to gather the latest information
+- Integrates data into research outputs with sources and links
+- Used by the 'researcher' agent defined in `agents.yaml`
+
+## Managing Sensitive Information
+
+Sensitive information such as API keys must be handled securely.
+
+- **Do not hardcode keys**: Use environment variables to load API keys.
+  
+- **Environment Configuration**: Store your configurations in the `.env` file and ensure it is included in your `.gitignore` to avoid accidental exposure.
+
+## Conclusion
+
+The CrewAI research project streamlines the process of gathering and reporting up-to-date web data. Its agent-driven framework facilitates efficient information processing and reporting while maintaining secure handling of sensitive information.
