@@ -1,0 +1,24 @@
+research_task:
+  description: >
+    Conduct a thorough research about {topic} by searching the web for up-to-date information.
+    Leverage the integrated web search capability (SerperDevTool) to find the most recent and relevant
+    data, articles, news, and developments. Make sure to search for current trends, breaking news,
+    and the latest insights given the current year is {current_year}.
+    Your web search abilities allow you to access real-time information from across the internet.
+  expected_output: >
+    A comprehensive list with 10 bullet points of the most relevant and up-to-date information
+    about {topic}, including sources and links from your web searches. Each point should be
+    backed by credible online sources discovered through your search
+  agent: researcher
+
+reporting_task:
+  description: >
+    Review the web search results and context you got, then expand each topic into a full
+    section for a comprehensive report. Ensure the report is detailed and incorporates all
+    the up-to-date information gathered from web searches, including recent developments
+    and current trends discovered online.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information
+    that reflects the latest web-sourced data. The report should integrate insights from
+    recent online sources and be formatted as markdown without '```'
+  agent: reporting_analyst
